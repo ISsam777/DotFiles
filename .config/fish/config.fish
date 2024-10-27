@@ -2,7 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 ############################################
-
+function fish_greeting
+	colorscript random
+end 	
 # ~/.config/fish/functions/fzf.fish
 function fzf --wraps="fzf"
     # Paste contents of preferred variant here
@@ -15,10 +17,49 @@ function fzf --wraps="fzf"
     command fzf
 end
 ####################################
-#
+######### Aliasles #######################
+#ex archiver#
+   function ex -a file
+    if test -f "$file"
+        switch "$file"
+            case "*.tar.bz2"
+                tar xjf $file
+            case "*.tar.gz"
+                tar xzf $file
+            case "*.bz2"
+                bunzip2 $file
+            case "*.rar"
+                unrar x $file
+            case "*.gz"
+                gunzip $file
+            case "*.tar"
+                tar xf $file
+            case "*.tbz2"
+                tar xjf $file
+            case "*.tgz"
+                tar xzf $file
+            case "*.zip"
+                unzip $file
+            case "*.Z"
+                uncompress $file
+            case "*.7z"
+                7z x $file
+            case "*"
+                echo "'$file' cannot be extracted via ex()"
+        end
+    else
+        echo "'$file' is not a valid file"
+    end
+end
+##                   ##                        ##
+alias kbd='sudo kanata -c ~/.config/kanata.kbd'
+alias inv='nvim $(fzf --preview="bat {}")'
+alias r='ranger'
+alias cls='clear'
 
+##########################################
+set fish_greeting
 zoxide init fish | source
 starship init fish | source
 #fzf --fish | source
-alias inv='nvim $(fzf --preview="bat {}")'
 thefuck --alias | source

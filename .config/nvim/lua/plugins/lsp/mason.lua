@@ -2,8 +2,7 @@ return {
 
   "williamboman/mason.nvim",
   dependencies = {
-   
-    { "williamboman/mason-lspconfig.nvim",},
+  { "williamboman/mason-lspconfig.nvim",},
   },
   cmd = "Mason",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
