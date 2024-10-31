@@ -56,10 +56,10 @@ alias kbd='sudo kanata -c ~/.config/kanata.kbd'
 alias inv='nvim $(fzf --preview="bat {}")'
 alias r='ranger'
 alias cls='clear'
-
+alias rsh='redshift -l 33.38545:6.80422'
 ##########################################
 set fish_greeting
 zoxide init fish | source
 starship init fish | source
-#fzf --fish | source
 thefuck --alias | source
+set -gx EDITOR nvim 

@@ -1,32 +1,38 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export FZF_DEFAULT_OPTS:\x0a\x09\x2d\x2dcolor\x3dfg\x3a\x23908caa\x2cbg\x3a\x23232136\x2chl\x3a\x23ea9a97\x0a\x09\x2d\x2dcolor\x3dfg\x2b\x3a\x23e0def4\x2cbg\x2b\x3a\x23393552\x2chl\x2b\x3a\x23ea9a97\x0a\x09\x2d\x2dcolor\x3dborder\x3a\x2344415a\x2cheader\x3a\x233e8fb0\x2cgutter\x3a\x23232136\x0a\x09\x2d\x2dcolor\x3dspinner\x3a\x23f6c177\x2cinfo\x3a\x239ccfd8\x0a\x09\x2d\x2dcolor\x3dpointer\x3a\x23c4a7e7\x2cmarker\x3a\x23eb6f92\x2cprompt\x3a\x23908caa
+SETUVAR --export TOKYONIGHT:night
 SETUVAR __fish_initialized:3400
-SETUVAR fish_color_autosuggestion:brblack
+SETUVAR _fisher_axkirillov_2F_tokyonight_2D_fish_files:\x7e/\x2econfig/fish/functions/_tokyonight_set_background\x2efish\x1e\x7e/\x2econfig/fish/functions/theme_tokyonight\x2efish\x1e\x7e/\x2econfig/fish/functions/tokyonight_day\x2efish\x1e\x7e/\x2econfig/fish/functions/tokyonight_moon\x2efish\x1e\x7e/\x2econfig/fish/functions/tokyonight_night\x2efish\x1e\x7e/\x2econfig/fish/functions/tokyonight_storm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/tokyonight\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eaxkirillov/tokyonight\x2dfish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_color_autosuggestion:565f89
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:blue
-SETUVAR fish_color_comment:red
+SETUVAR fish_color_command:7dcfff
+SETUVAR fish_color_comment:565f89
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:green
-SETUVAR fish_color_error:brred
-SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_end:ff9e64
+SETUVAR fish_color_error:f7768e
+SETUVAR fish_color_escape:bb9af7
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
 SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:brcyan
-SETUVAR fish_color_param:cyan
-SETUVAR fish_color_quote:yellow
-SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_keyword:bb9af7
+SETUVAR fish_color_normal:c0caf5
+SETUVAR fish_color_operator:9ece6a
+SETUVAR fish_color_param:9d7cd8
+SETUVAR fish_color_quote:e0af68
+SETUVAR fish_color_redirection:c0caf5
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d33467c
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d33467c
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_default_key_bindings
-SETUVAR fish_pager_color_completion:normal
-SETUVAR fish_pager_color_description:yellow\x1e\x2di
-SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_pager_color_completion:c0caf5
+SETUVAR fish_pager_color_description:565f89
+SETUVAR fish_pager_color_prefix:7dcfff
+SETUVAR fish_pager_color_progress:565f89
+SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d33467c

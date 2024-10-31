@@ -22,18 +22,17 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
 map("n", "<leader>fm", function()
-  require("conform").format { lsp_fallback = true }
+	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
 
 -- tabufline
-map("n", "<leader>bb", "<cmd>enew<CR>", { desc = "buffer new" })
-map("n", "<leader>l", "<cmd>bnext<CR>", { desc = "buffer next" })
-map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "buffer exit" })
-
-
+map("n", "<C-t>", "<cmd>Alpha<CR>", { desc = "buffer new" })
+map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "buffer next" })
+map("n", "<C-S-Tab>", "<cmd>bprevious<CR>", { desc = "buffer prev" })
+map("n", "<C-w>", "<cmd>bdelete<CR>", { desc = "buffer exit" })
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
@@ -53,20 +52,25 @@ map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
-
-
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map(
-  "n",
-  "<leader>fa",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "telescope find all files" }
+	"n",
+	"<leader>fa",
+	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+	{ desc = "telescope find all files" }
 )
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
-map("n","<leader>th","<cmd>ToggleTerm <CR>",{desc = "toggle terminal"})
+map("n", "<leader>th", "<cmd>ToggleTerm <CR>", { desc = "toggle terminal" })
+map("n", "<leader>tf", "<cmd>FloatermToggle <CR>", { desc = "toggle  float termina terminal" })
+
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
-
-
+-- Oil
+vim.keymap.set("n", "<Tab>", "<CMD>Oil --float <CR>", { desc = "Open parent directory" })
+-- resize
+vim.keymap.set("n", "<C-S-k>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+vim.keymap.set("n", "<C-S-j>", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "<C-S-h>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "<C-S-l>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
