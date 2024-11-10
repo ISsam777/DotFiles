@@ -51,12 +51,17 @@ end
         echo "'$file' is not a valid file"
     end
 end
+############
+ function wifi
+	 rofi-wifi-menu.sh
+ end
 ##                   ##                        ##
 alias kbd='sudo kanata -c ~/.config/kanata.kbd'
 alias inv='nvim $(fzf --preview="bat {}")'
 alias r='ranger'
 alias cls='clear'
 alias rsh='redshift -l 33.38545:6.80422'
+#alias rofi-wifi-menu.sh='wifi'
 ##########################################
 set fish_greeting
 zoxide init fish | source

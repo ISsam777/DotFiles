@@ -22,7 +22,7 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
 map("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
+   require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 -- global lsp mappings
@@ -30,8 +30,8 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic locli
 
 -- tabufline
 map("n", "<C-t>", "<cmd>Alpha<CR>", { desc = "buffer new" })
-map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "buffer next" })
-map("n", "<C-S-Tab>", "<cmd>bprevious<CR>", { desc = "buffer prev" })
+map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "buffer next" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "buffer prev" })
 map("n", "<C-w>", "<cmd>bdelete<CR>", { desc = "buffer exit" })
 
 -- Comment
@@ -54,10 +54,10 @@ map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidd
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map(
-	"n",
-	"<leader>fa",
-	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-	{ desc = "telescope find all files" }
+   "n",
+   "<leader>fa",
+   "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+   { desc = "telescope find all files" }
 )
 
 -- terminal
@@ -68,9 +68,9 @@ map("n", "<leader>tf", "<cmd>FloatermToggle <CR>", { desc = "toggle  float termi
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 -- Oil
-vim.keymap.set("n", "<Tab>", "<CMD>Oil --float <CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>o", "<CMD>Oil --float <CR>", { desc = "Open parent directory" })
 -- resize
-vim.keymap.set("n", "<C-S-k>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-vim.keymap.set("n", "<C-S-j>", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
-vim.keymap.set("n", "<C-S-h>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
-vim.keymap.set("n", "<C-S-l>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+vim.keymap.set("n", "<C-S-k>", [[<cmd>vertical resize +5<cr>]])
+vim.keymap.set("n", "<C-S-j>", [[<cmd>vertical resize -5<cr>]])
+vim.keymap.set("n", "<C-S-h>", [[<cmd>horizontal resize +2<cr>]])
+vim.keymap.set("n", "<C-S-l>", [[<cmd>horizontal resize -2<cr>]])
