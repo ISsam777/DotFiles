@@ -40,7 +40,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec /home/issm/.config/rofi/launchers/type-7/launcher.sh
+bindsym $mod+d exec /home/Issam/.config/rofi/launchers/type-7/launcher.sh
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -153,55 +153,44 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# set primary Rosé Pine Moon colorscheme colors
-set $base           #232136
-set $surface        #2a273f
-set $overlay        #393552
-set $muted          #6e6a86
-set $subtle         #908caa
-set $text           #e0def4
-set $love           #eb6f92
-set $gold           #f6c177
-set $rose           #ea9a97
-set $pine           #3e8fb0
-set $foam           #9ccfd8
-set $iris           #c4a7e7
-set $highlightlow   #2a283e
-set $highlightmed   #44415a
-set $highlighthigh  #56526e
+#################Colors#########################################
 
-# Teming border and Windows --------------
-# target                 title     bg    text   indicator  border
-client.focused           $rose     $base $text  $love      $pine
-client.focused_inactive  $text     $base $text  $subtle    $surface
-client.unfocused         $text     $base $text  $overlay   $overlay
-client.urgent            $text     $base $text  $love      $love
-client.placeholder       $base     $base $text  $overlay   $overlay
-client.background        $base
+ client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+ client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+ client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
-########gaps#########
+########gaps###############################################
 # Configure 5px of space between windows and to the screen edges.
-gaps inner 25px
+gaps inner 10px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
-gaps outer 30px
-gaps top 30px
+gaps outer 15px
+gaps top 50px
 
 #################
 bindsym $mod+r mode "resize"
 
 #Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# exec xset s noblank
+exec xset s noblank
 exec xset s off 
 exec xset -dpms
+exec xinput disable 10
 exec_always --no-startup-id picom  
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always autotiling  
-exec --no-startup-id feh --bg-fill ~/Downloads/walls/jx0cehys3yr31.jpg
+exec_always nitrogen --restore 
 exec fcitx
+exec --no-startup-id i3-msg 'workspace 10; exec kitty -e kanata --cfg ~/.config/kanata.kbd '
+exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec kitty'
+exec --no-startup-id i3-msg 'workspace 1; exec kitty -e nvim'
 # Review the lines below and append to ~/.config/i3/config
+
+#lockscreen
+bindsym  $mod+Shift+u exec betterlockscreen -l
+# Review the lines below and append to ~/.config/i3/config
+
 ## Volume control
 
 # Path to volume control, without trailing slash
@@ -219,18 +208,14 @@ set $statussig SIGUSR1
 # Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
-# alsa-utils settings
+# pulseaudio-utils settings
 #
-# To configure a default card, see https://www.alsa-project.org/main/index.php/Asoundrc
-#
-# Card number to control.
-#   If not specified, i3-volume will let `amixer` use a default.
-#   List cards: aplay -l
-#set $alsacard 1
+# Symbolic name for sink (numeric index not supported)
+#   Recommended: comment out this setting and omit the -s option to use default sink
+#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
 
-# append "-c $alsacard" without quotes to override default card
-bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
-#lockscreen
-bindsym  $mod+Shift+u exec betterlockscreen -l
+# Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
+bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute

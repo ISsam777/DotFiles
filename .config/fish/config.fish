@@ -3,7 +3,7 @@ if status is-interactive
 end
 ############################################
 function fish_greeting
-	colorscript random
+	#colorscript random
 end 	
 # ~/.config/fish/functions/fzf.fish
 function fzf --wraps="fzf"

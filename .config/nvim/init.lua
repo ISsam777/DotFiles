@@ -1,6 +1,5 @@
 require("config.lazy")
 require("core.keymap")
-require("oil").setup()
 
 -- All options that can be passed to `user_default_options` in setup() can be passed here
 -- Similar for other functions

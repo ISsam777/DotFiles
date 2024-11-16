@@ -24,9 +24,9 @@ map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" }
 map("n", "<leader>fm", function()
    require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
-
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+-- HACK
 
 -- tabufline
 map("n", "<C-t>", "<cmd>Alpha<CR>", { desc = "buffer new" })
@@ -39,8 +39,8 @@ map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+map("n", "<leader>e", "<cmd>Neotree right<CR>", { desc = "nvimtree toggle window" })
+map("n", "<leader>x", "<cmd>Neotree close<CR>", { desc = "nvimtree toggle window" })
 
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
@@ -59,7 +59,6 @@ map(
    "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
    { desc = "telescope find all files" }
 )
-
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map("n", "<leader>th", "<cmd>ToggleTerm <CR>", { desc = "toggle terminal" })
@@ -68,7 +67,23 @@ map("n", "<leader>tf", "<cmd>FloatermToggle <CR>", { desc = "toggle  float termi
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 -- Oil
-vim.keymap.set("n", "<leader>o", "<CMD>Oil --float <CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>o", "<CMD> Telescope opener <CR>", { desc = "Open parent directory" })
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+   require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+   require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+-- You can also specify a list of valid jump keywords
+
+vim.keymap.set("n", "]t", function()
+   require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
+end, { desc = "Next error/warning todo comment" })
+
 -- resize
 vim.keymap.set("n", "<C-S-k>", [[<cmd>vertical resize +5<cr>]])
 vim.keymap.set("n", "<C-S-j>", [[<cmd>vertical resize -5<cr>]])
