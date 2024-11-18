@@ -1,3 +1,0 @@
-{"timestamp":2239221,"category":"nimbus_events","name":"enroll_failed","extra":{"experiment":"relay-integration-into-firefox-118-release-for-all-fxa-and-autofill-users","reason":"feature-conflict","glean_timestamp":"1731716932082"}}
-{"timestamp":2239297,"category":"nimbus_events","name":"validation_failed","extra":{"glean_timestamp":"1731716932158","experiment":"add-an-image-to-pdf-with-alt-text-rollout","feature":"addAnImageInPDF","reason":"invalid-feature"}}
-{"timestamp":2239297,"category":"nimbus_events","name":"validation_failed","extra":{"glean_timestamp":"1731716932159","experiment":"tab-hover-preview-release-rollout","feature":"tabPreview","reason":"invalid-feature"}}
