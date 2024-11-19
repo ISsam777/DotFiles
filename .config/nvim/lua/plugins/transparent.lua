@@ -1,4 +1,0 @@
-return {
-
-   "Leviathenn/nvim-transparent",
-}

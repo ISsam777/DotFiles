@@ -1,4 +1,0 @@
-return {
-
-   "willthbill/opener.nvim",
-}

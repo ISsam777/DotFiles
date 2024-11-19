@@ -68,3 +68,4 @@ zoxide init fish | source
 starship init fish | source
 thefuck --alias | source
 set -gx EDITOR nvim 
+tmux

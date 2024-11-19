@@ -26,21 +26,9 @@ map("n", "<leader>fm", function()
 end, { desc = "general format file" })
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
--- HACK
-
--- tabufline
-map("n", "<C-t>", "<cmd>Alpha<CR>", { desc = "buffer new" })
-map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "buffer next" })
-map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "buffer prev" })
-map("n", "<C-w>", "<cmd>bdelete<CR>", { desc = "buffer exit" })
-
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
-
--- nvimtree
-map("n", "<leader>e", "<cmd>Neotree right<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>x", "<cmd>Neotree close<CR>", { desc = "nvimtree toggle window" })
 
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
@@ -59,11 +47,6 @@ map(
    "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
    { desc = "telescope find all files" }
 )
--- terminal
-map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
-map("n", "<leader>th", "<cmd>ToggleTerm <CR>", { desc = "toggle terminal" })
-map("n", "<leader>tf", "<cmd>FloatermToggle <CR>", { desc = "toggle  float termina terminal" })
-
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 -- Oil
