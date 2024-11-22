@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # You can also use any non-zero value if you'd like to have a border
 # You can also use any non-zero value if you'd like to have a border
-default_border pixel 2
+default_border pixel 0
 #border indicator on windows:
 
 
