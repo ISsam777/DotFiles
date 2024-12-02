@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # You can also use any non-zero value if you'd like to have a border
 # You can also use any non-zero value if you'd like to have a border
-default_border pixel 0
+default_border pixel 2
 #border indicator on windows:
 
 
@@ -173,6 +173,8 @@ bindsym $mod+r mode "resize"
 
 #Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+bindsym $mod+y exec kitty -e yazi
+bindsym $mod+g exec firefox
 exec xset s noblank
 exec xset s off 
 exec xset -dpms
@@ -180,11 +182,9 @@ exec xinput disable 10
 exec_always --no-startup-id picom  
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always nitrogen --restore 
-exec fcitx
 exec --no-startup-id i3-msg 'workspace 10; exec kitty -e kanata --cfg ~/.config/kanata.kbd '
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec kitty'
-exec --no-startup-id i3-msg 'workspace 1; exec kitty -e nvim'
 # Review the lines below and append to ~/.config/i3/config
 
 #lockscreen
@@ -219,3 +219,9 @@ set $volumestep 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute
+# Special keys to adjust brightness via brightnessctl
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+# change language layout Shift+alt
+ exec_always --no-startup-id "setxkbmap -layout us,ara -option 'grp:alt_shift_toggle'" 
+
