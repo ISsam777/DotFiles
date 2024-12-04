@@ -35,9 +35,9 @@ choose_network() {
 
         # Mostrar el resultado de la conexión
         if [ $? -eq 0 ]; then
-            rofi -e "Conectado a $ssid con éxito."
+            rofi -e "connected to $ssid ."
         else
-            rofi -e "Error al intentar conectar a $ssid."
+            rofi -e "Failed to connect to $ssid."
         fi
     fi
 }
@@ -53,6 +53,6 @@ else
     if [ -n "$current_network" ]; then
         echo "   $current_network"
     else
-        echo " 睊 No conectado"
+        echo " 睊 No connection"
     fi
 fi
