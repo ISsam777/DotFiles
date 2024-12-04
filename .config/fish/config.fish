@@ -57,7 +57,6 @@ alias kbd='sudo kanata -c ~/.config/kanata.kbd'
 alias y='yazi'
 alias cls='clear'
 alias rsh='redshift -l 33.38545:6.80422'
-
 ##########################################
 # Set up fzf key bindings
 set fish_greeting
