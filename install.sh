@@ -26,9 +26,9 @@ echo -e "${C1} updating the system..."
 apt update && apt upgrade 
 
 echo -e "${C1} installing dependencies..."
-apt install  fzf neovim kitty i3 autotiling git eza zoxide bat fish btop polybar stow
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install yazi  starship
+apt install  fzf neovim kitty i3 autotiling git eza zoxide bat fish btop polybar stow yazi starship 
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# brew install yazi  starship
 
 ;;
 3)
@@ -38,7 +38,7 @@ sudo dnf upgrade --refresh && sudo dnf system-upgrade download --releasever=41
 
 echo -e "${C1} installing dependencies..."
 
-dnf install fzf yazi neovim kitty i3 zoxide exa autotiling git bat fish starship btop polybar stow
+dnf install fzf yazi neovim kitty i3 zoxide exa autotiling git bat fish starship btop polybar stow --skip-unavailable
 dnf install dragon
 ;;
   *)
@@ -52,4 +52,3 @@ cd .config/
 stow . --adopt
 
 ####  remember to make changes in dotfiles  and it will change automaticly in ~/.config
-#### WARN: deleting dotfile will automaticly delte ~/.config

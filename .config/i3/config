@@ -180,7 +180,7 @@ exec xset s noblank
 exec xset s off 
 exec xset -dpms
 exec xinput disable 10
-exec_always --no-startup-id picom  
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always nitrogen --restore 
 exec --no-startup-id i3-msg 'workspace 10; exec kitty -e kanata --cfg ~/.config/kanata.kbd '
